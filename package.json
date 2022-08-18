@@ -1,0 +1,56 @@
+{
+  "name": "vite-template-solid",
+  "version": "0.0.0",
+  "description": "",
+  "browserslist": [
+    "since 2018 and not dead, node 16"
+  ],
+  "scripts": {
+    "start": "vite",
+    "dev:nossr": "vite --config vite.non_ssr.config.ts",
+    "dev": "node server.mjs",
+    "prod": "cross-env NODE_ENV=production node server.mjs",
+    "build": "npm run build:client && npm run build:server",
+    "build:server": "vite build --outDir dist/lib  --ssr src/index-entry-server.tsx ",
+    "build:client": "vite build  --outDir dist/public   ",
+    "serve": "vite preview",
+    "rbuild:ssr": "rollup -c rollup.config.js"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.18.10",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^22.0.1",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-replace": "^4.0.0",
+    "@rollup/plugin-typescript": "^8.3.4",
+    "@rushstack/eslint-patch": "^1.1.4",
+    "@typescript-eslint/eslint-plugin": "^5.32.0",
+    "@typescript-eslint/parser": "^5.32.0",
+    "autoprefixer": "^10.4.8",
+    "babel-preset-solid": "^1.4.8",
+    "compression": "^1.7.4",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.21.0",
+    "eslint-plugin-compat": "^4.0.2",
+    "express": "^4.18.1",
+    "node-fetch": "^3.2.10",
+    "path": "^0.12.7",
+    "rollup": "^2.77.2",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-route-manifest": "^1.0.0",
+    "sass": "^1.54.2",
+    "serve": "^14.0.1",
+    "typescript": "^4.7.4",
+    "vite": "^3.0.0",
+    "vite-plugin-eslint": "^1.7.0",
+    "vite-plugin-solid": "^2.3.0"
+  },
+  "dependencies": {
+    "@solidjs/router": "^0.4.2",
+    "globalthis": "^1.0.3",
+    "solid-js": "^1.4.7"
+  }
+}

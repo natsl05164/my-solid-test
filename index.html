@@ -1,0 +1,26 @@
+<!--bundler (vite) auto calls /index.html when build or start-->
+<script type="text/javascript"> 
+console.log('work');
+     function browserSupportsAllFeatures() {
+        return globalThis;
+      }
+
+      function loadScript(src, done) {
+        var js = document.createElement('script');
+        js.src = src;
+        js.onload = function() {
+            done();
+        };
+        js.onerror = function() {
+            done(new Error('Failed to load script ' + src));
+        };
+        document.head.appendChild(js);
+    }
+   
+    if (!browserSupportsAllFeatures()) {
+        loadScript('./src/polyfils.js', main);
+    }  
+</script> 
+ 
+<!-- <script type="module" src="./src/polyfils.js"  ></script> -->
+<script type="module" async src="./src/index-entry-client.tsx" ></script>
