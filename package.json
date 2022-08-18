@@ -2,19 +2,9 @@
   "name": "vite-template-solid",
   "version": "0.0.0",
   "description": "",
-  "browserslist": [
-    "since 2018 and not dead, node 16"
-  ],
+  "browserslist": ["since 2018 and not dead, node 16"],
   "scripts": {
-    "start": "vite",
-    "dev:nossr": "vite --config vite.non_ssr.config.ts",
-    "dev": "node server.mjs",
-    "prod": "cross-env NODE_ENV=production node server.mjs",
-    "build": "npm run build:client && npm run build:server",
-    "build:server": "vite build --outDir dist/lib  --ssr src/index-entry-server.tsx ",
-    "build:client": "vite build  --outDir dist/public   ",
-    "serve": "vite preview",
-    "rbuild:ssr": "rollup -c rollup.config.js"
+    "start": "cross-env NODE_ENV=production node server.mjs"
   },
   "license": "MIT",
   "devDependencies": {
